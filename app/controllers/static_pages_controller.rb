@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def lately
+  end
+
   def help
   end
 
