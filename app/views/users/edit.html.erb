@@ -18,6 +18,9 @@
       <%= f.label :password_confirmation, "パスワードの再入力" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :自己紹介文 %>
+      <%= f.text_field :bio, class: 'form-control' %>
+
       <%= f.submit "更新", class: "btn btn-primary" %>
     <% end %>
 
