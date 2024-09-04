@@ -5,4 +5,7 @@
     | <%= link_to "delete", user, data: { "turbo-method": :delete,
                                           turbo_confirm: "You sure?" } %>
   <% end %>
+  <% if user.bio.present? %>
+    <p><%= link_to user.bio, user %></p>
+  <% end %>
 </li>
