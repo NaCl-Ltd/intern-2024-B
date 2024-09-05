@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  links:
+    user: "Users"
+    new: "New"
+    help: "Help"
+    home: "Home"
+    delete: "delete"
