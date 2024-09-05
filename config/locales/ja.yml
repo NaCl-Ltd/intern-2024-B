@@ -1,11 +1,21 @@
 ---
 ja:
   links:
-    User: "ユーザー"
-    New: "最近"
-    Help: "ヘルプ"
-    Home: "ホーム"
+    user: "ユーザー"
+    new: "最近"
+    help: "ヘルプ"
+    home: "ホーム"
     delete: "削除"
+    account: "アカウント"
+    profile: "プロフィール"
+    setting: "設定"
+    log_out: "ログアウト"
+    language: "言語"
+
+  users:
+    following: "フォロー"
+    followers: "フォロワー"
+
   activerecord:
     errors:
       messages:
@@ -189,3 +199,25 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  will_paginate:
+    previous_label: "&#8592; 前へ"
+    previous_aria_label: "前のページ"
+    next_label: "次へ &#8594;"
+    next_aria_label: "次のページ"
+    page_gap: "&hellip;"
+    container_aria_label: "Pagination"
+    page_aria_label: "ページ %{page}"
+
+    page_entries_info:
+      single_page:
+        zero:  "No %{model} found"
+        one:   "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+      single_page_html:
+        zero:  "No %{model} found"
+        one:   "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
