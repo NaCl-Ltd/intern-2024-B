@@ -14,10 +14,11 @@
       </div>
       <ul id="navbar-menu"
           class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム", root_path %></li>
-        <li><%= link_to "ヘルプ", help_path %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New", lately_path %></li>
+        <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "ユーザー", users_path %></li>
+          <li><%= link_to "User", users_path %></li>
           <li class="dropdown">
             <a href="#" id="account" class="dropdown-toggle">
               アカウント <b class="caret"></b>
