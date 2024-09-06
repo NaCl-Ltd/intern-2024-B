@@ -16,7 +16,14 @@ Rails.application.routes.draw do
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy] do
+  member do
+    get :pin
+    get :pin_out
+  end
+end
   resources :relationships,       only: [:create, :destroy]
   get '/microposts', to: 'static_pages#home'
+  #post '/microposts/:id/pin' , to: 'microposts#pin'
+  #post '/microposts/:id/pin_out' , to: 'microposts#pin_out'
 end

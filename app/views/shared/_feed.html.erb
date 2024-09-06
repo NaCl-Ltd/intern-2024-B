@@ -1,6 +1,7 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-    <%= render @feed_items %>
+    <%= render @feed_items.where(pinned: true) %>
+    <%= render @feed_items.where(pinned: false) %>
   </ol>
   <%= will_paginate @feed_items,
                     params: { controller: :static_pages, action: :home } %>
