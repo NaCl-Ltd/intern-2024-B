@@ -3,6 +3,8 @@
     <%= render @pinned %>
     <%= render @not_pinned %>
   </ol>
-  <%= will_paginate @feed_items,
-                    params: { controller: :static_pages, action: :home } %>
+  <% if controller_name == 'static_pages' && action_name == 'home' %>
+    <%= will_paginate @feed_items, params: { controller: :static_pages, action: :home } %>
+  <% elsif controller_name == 'static_pages' && action_name == 'lately' %>
+  <% end %>
 <% end %>
