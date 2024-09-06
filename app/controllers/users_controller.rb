@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @pinned = @microposts.where(pinned: true)
+    @not_pinned = @microposts.where(pinned: false)
   end
 
   def new

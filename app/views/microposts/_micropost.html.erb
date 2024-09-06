@@ -13,12 +13,12 @@
       <%= link_to "削除", micropost, data: { "turbo-method": :delete,
                                                turbo_confirm: "You sure?" } %>
     <% end %>
-    <% if current_user?(micropost.user) %>
-  <% if micropost.pinned? %>
-    <%= link_to "固定解除", pin_out_micropost_path(micropost), method: :get %>
-  <% else %>
-    <%= link_to "固定する", pin_micropost_path(micropost), method: :get %>
+  <% if current_user?(micropost.user) %>
+    <% if micropost.pinned? %>
+      <%= link_to "固定解除", pin_out_micropost_path(micropost), data:{ turbo_method: :post} %>
+    <% else %>
+      <%= link_to "固定する", pin_micropost_path(micropost), data:{ turbo_method: :post} %>
+    <% end %>
   <% end %>
-<% end %>
   </span>
 </li>

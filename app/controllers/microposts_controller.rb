@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.image.attach(params[:micropost][:image])
-    @micropost.update(pinned: false)
+    @micropost.pinned = false
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
@@ -27,13 +27,11 @@ class MicropostsController < ApplicationController
 
   def pin
     current_user.microposts.where(pinned: true).update_all(pinned: false)
-    @micropost = Micropost.find(params[:id])
     @micropost.update(pinned: true)
     redirect_to request.referrer, status: :see_other
   end
 
   def pin_out
-    @micropost = Micropost.find(params[:id])
     @micropost.update(pinned: false)
     redirect_to request.referrer, status: :see_other
   end
@@ -41,7 +39,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :image, :pining)
+      params.require(:micropost).permit(:content, :image, :pinned)
     end
 
     def correct_user

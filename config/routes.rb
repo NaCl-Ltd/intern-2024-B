@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy] do
   member do
-    get :pin
-    get :pin_out
+    post :pin
+    post :pin_out
   end
 end
   resources :relationships,       only: [:create, :destroy]
