@@ -1,10 +1,11 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:destroy, :pin , :pin_out]
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.image.attach(params[:micropost][:image])
+    @micropost.pinned = false
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
@@ -24,10 +25,23 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def pin
+    current_user.microposts.where(pinned: true).each do |micropost|
+      micropost.update(pinned: false)
+    end
+    @micropost.update(pinned: true)
+    redirect_to request.referrer, status: :see_other
+  end
+
+  def pin_out
+    @micropost.update(pinned: false)
+    redirect_to request.referrer, status: :see_other
+  end
+
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :image)
+      params.require(:micropost).permit(:content, :image, :pinned)
     end
 
     def correct_user

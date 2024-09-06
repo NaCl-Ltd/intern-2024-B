@@ -13,6 +13,13 @@
       <%= link_to t('links.delete'), micropost, data: { "turbo-method": :delete,
                                                turbo_confirm: "You sure?" } %>
     <% end %>
+  <% if current_user?(micropost.user) %>
+    <% if micropost.pinned? %>
+      <%= link_to "固定解除", pin_out_micropost_path(micropost), data:{ turbo_method: :post} %>
+    <% else %>
+      <%= link_to "固定する", pin_micropost_path(micropost), data:{ turbo_method: :post} %>
+    <% end %>
+  <% end %>
   </span>
   <%= render "likes/like", micropost: micropost %>
 </li>

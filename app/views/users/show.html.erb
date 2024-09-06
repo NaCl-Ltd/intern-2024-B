@@ -17,7 +17,10 @@
     <% if @user.microposts.any? %>
       <h3>投稿 (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
-        <%= render @microposts %>
+
+      <%= render @pinned %>
+      <%= render @not_pinned %>
+
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
