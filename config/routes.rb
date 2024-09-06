@@ -24,6 +24,4 @@ Rails.application.routes.draw do
 end
   resources :relationships,       only: [:create, :destroy]
   get '/microposts', to: 'static_pages#home'
-  #post '/microposts/:id/pin' , to: 'microposts#pin'
-  #post '/microposts/:id/pin_out' , to: 'microposts#pin_out'
 end

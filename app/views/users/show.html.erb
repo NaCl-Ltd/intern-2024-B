@@ -17,8 +17,10 @@
     <% if @user.microposts.any? %>
       <h3>投稿 (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
-          <%= render @microposts.where(pinned: true) %>
-          <%= render @microposts.where(pinned: false) %>
+
+      <%= render @microposts.where(pinned: true) %>
+      <%= render @microposts.where(pinned: false) %>
+
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
