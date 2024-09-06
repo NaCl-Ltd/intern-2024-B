@@ -26,7 +26,9 @@ class MicropostsController < ApplicationController
   end
 
   def pin
-    current_user.microposts.where(pinned: true).update_all(pinned: false)
+    current_user.microposts.where(pinned: true).each do |micropost|
+      micropost.update(pinned: false)
+    end
     @micropost.update(pinned: true)
     redirect_to request.referrer, status: :see_other
   end
