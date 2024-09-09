@@ -1,7 +1,13 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-    <%= render @pinned %>
-    <%= render @not_pinned %>
+    <% if @pinned.present? %>
+      <%= render @pinned %>
+    <% end %>
+    <% if @not_pinned.present? %>
+      <%= render @not_pinned %>
+    <% else %>
+      <%= render @feed_items %>
+    <% end %>
   </ol>
   <% if controller_name == 'static_pages' && action_name == 'home' %>
     <%= will_paginate @feed_items, params: { controller: :static_pages, action: :home } %>

@@ -1,9 +1,19 @@
 <% provide(:title, 'All users') %>
 <h1>すべてのユーザー</h1>
 
+<%= form_with url:users_path,local: true,method: :get do |f| %>
+  <%= f.text_field :word %>
+ <%= f.submit "検索", class: "btn btn-primary" %>
+<% end %>
+
+
 <%= will_paginate %>
 
 <ul class="users">
-  <%= render @users %>
+  <% if @users.present? %>
+    <%= render @users %>
+  <% else %>
+    <p>一致するユーザは存在しませんでした</p>
+  <% end %>
 </ul>
 <%= will_paginate %>
