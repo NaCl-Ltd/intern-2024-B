@@ -10,7 +10,7 @@
 <%= will_paginate %>
 
 <ul class="users">
-  <% if @users.present? %>
+  <% if @users.any? %>
     <%= render @users %>
   <% else %>
     <p>一致するユーザは存在しませんでした</p>
