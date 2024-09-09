@@ -5,7 +5,18 @@
     | <%= link_to "delete", user, data: { "turbo-method": :delete,
                                           turbo_confirm: "You sure?" } %>
   <% end %>
+  <br>
+  <c id="following" class="stat">
+    <%= user.following.count %>
+  </c>
+  <%= t("users.following") %>
+  &nbsp;|&nbsp;&nbsp;
+  <c id="followers" class="stat">
+    <%= user.followers.count %>
+  </c>
+  <%= t("users.followers") %>
+
   <% if user.bio.present? %>
-    <p><%= link_to user.bio, user %></p>
+    <p><%= user.bio %></p>
   <% end %>
 </li>
