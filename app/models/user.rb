@@ -121,4 +121,8 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
+    def self.looks(word)
+      where("name LIKE ? OR email LIKE ?", "%#{word}%", "%#{word}%")
+    end
 end
