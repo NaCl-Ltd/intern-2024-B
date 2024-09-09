@@ -5,9 +5,11 @@
   </small>
   <nav>
     <ul>
-      <li><%= link_to "このサイトについて",   about_path %></li>
-      <li><%= link_to "お問い合わせ", contact_path %></li>
-      <li><a href="https://news.railstutorial.org/">ニュース</a></li>
+      <li><%= link_to t('pages.about'),   about_path %></li>
+      <li><%= link_to t('pages.contact'), contact_path %></li>
+      <li><a href="https://news.railstutorial.org/">
+        <%= t('pages.news') %>
+      </a></li>
     </ul>
   </nav>
 </footer>

@@ -34,8 +34,9 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "ログイン", login_path %></li>
+          <li><%= link_to t('links.log_in'), login_path %></li>
         <% end %>
+
         <li class="dropdown">
           <a href="#" id="language" class="dropdown-toggle">
             <%= t("links.language") %> <b class="caret"></b>
@@ -45,6 +46,7 @@
             <li><%= link_to "日本語", url_for(locale: :ja) %></li>
           </ul>
         </li>
+        
       </ul>
     </nav>
   </div>
