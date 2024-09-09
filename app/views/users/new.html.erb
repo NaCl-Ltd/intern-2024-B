@@ -1,24 +1,26 @@
 <% provide(:title, 'Sign up') %>
-<h1>サインアップ</h1>
+<h1>
+  <%= t('links.sign_up') %>
+</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :ユーザーネーム %>
+      <%= f.label :name, t('users.user_name') %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :メールアドレス %>
+      <%= f.label :email, t('users.email') %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :パスワード %>
+      <%= f.label :password, t('users.password') %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "パスワードの再入力" %>
+      <%= f.label :password_confirmation, t('users.confirmation') %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "アカウントの作成", class: "btn btn-primary" %>
+      <%= f.submit t("pages.mk_account"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

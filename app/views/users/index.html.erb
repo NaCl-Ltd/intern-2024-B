@@ -1,5 +1,7 @@
 <% provide(:title, 'All users') %>
-<h1>すべてのユーザー</h1>
+<h1>
+  <%= t('pages.all_users') %>
+</h1>
 
 <%= form_with url:users_path,local: true,method: :get do |f| %>
   <%= f.text_field :word %>
