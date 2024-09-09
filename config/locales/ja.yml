@@ -8,13 +8,40 @@ ja:
     delete: "削除"
     account: "アカウント"
     profile: "プロフィール"
+    prof_text: "ここに文章を入力してください" 
     setting: "設定"
+    log_in: "ログイン"
     log_out: "ログアウト"
+    sign_up: "アカウント作成"
     language: "言語"
+    update: "更新"
+    post: "投稿"
+    pinned: "固定する"
+    pin_out: "固定解除"
 
   users:
+    user_name: "ユーザー名"
+    email: "メールアドレス"
+    password: "パスワード"
+    confirmation: "パスワードの再入力"
+    change: "変更"
     following: "フォロー"
     followers: "フォロワー"
+    bio: "自己紹介"
+    reset_pass: "パスワードのリセット"
+    forgot_pass: "パスワードを忘れた"
+
+  pages:
+    all_users: "全てのユーザー"
+    mk_account: "アカウントを作成"
+    about: "このサイトについて"
+    contact: "お問い合わせ"
+    news: "ニュース"
+    rem_pass: "次回からパスワードを自動で入力する"
+    view_prof: "プロフィールを見る"
+    upd_prof: "プロフィールの更新"
+    new_feed: "最新のフィード"
+    welcome: "Turquoiseへようこそ!!"
 
   activerecord:
     errors:

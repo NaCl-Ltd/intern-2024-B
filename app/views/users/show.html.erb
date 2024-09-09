@@ -10,12 +10,18 @@
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
-    <p><strong>自己紹介文:</strong> <%= @user.bio %></p>
+    <p>
+      <strong>
+        <%= t('users.bio') %>:
+      </strong> <%= @user.bio %>
+    </p>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
-      <h3>投稿 (<%= @user.microposts.count %>)</h3>
+      <h3>
+        <%= t('links.post') %>
+        (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
 
       <%= render @pinned %>

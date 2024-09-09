@@ -1,25 +1,29 @@
 <% provide(:title, "Log in") %>
-<h1>ログイン</h1>
+<h1>
+ <%= t('links.log_in') %>
+</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(url: login_path, scope: :session) do |f| %>
 
-      <%= f.label :メールアドレス %>
+      <%= f.label :email, t('users.email') %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :パスワード %>
+      <%= f.label :passwrd, t('users.password') %>
       <%= link_to "(forgot password)", new_password_reset_path %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
-        <span>次回からパスワードを自動で入力する</span>
+        <span>
+          <%= t('pages.rem_pass') %>
+        </span>
       <% end %>
 
-      <%= f.submit "ログイン", class: "btn btn-primary" %>
+      <%= f.submit t('links.log_in'), class: "btn btn-primary" %>
     <% end %>
 
-    <p><%= link_to "新たにアカウントを作成する", signup_path %></p>
+    <p><%= link_to t('links.sign_up'), signup_path %></p>
   </div>
 </div>

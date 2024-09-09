@@ -15,9 +15,9 @@
     <% end %>
   <% if current_user?(micropost.user) %>
     <% if micropost.pinned? %>
-      <%= link_to "固定解除", pin_out_micropost_path(micropost), data:{ turbo_method: :post} %>
+      <%= link_to t('pin_out'), pin_out_micropost_path(micropost), data:{ turbo_method: :post} %>
     <% else %>
-      <%= link_to "固定する", pin_micropost_path(micropost), data:{ turbo_method: :post} %>
+      <%= link_to t('pinned'), pin_micropost_path(micropost), data:{ turbo_method: :post} %>
     <% end %>
   <% end %>
   </span>

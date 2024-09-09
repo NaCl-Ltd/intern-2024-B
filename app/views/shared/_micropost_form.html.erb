@@ -1,9 +1,9 @@
 <%= form_with(model: @micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "ここに文章を入力してください" %>
+    <%= f.text_area :content, placeholder: t('links.prof_text') %>
   </div>
-  <%= f.submit "投稿", class: "btn btn-primary" %>
+  <%= f.submit t('links.post'), class: "btn btn-primary" %>
   <span class="image">
     <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
   </span>
