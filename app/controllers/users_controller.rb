@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
+    target_word = params[:word]
     if params[:word]
-      target_word = params[:word]
       @users = User.looks(target_word).paginate(page: params[:page])
     else
       @users = User.paginate(page: params[:page])
