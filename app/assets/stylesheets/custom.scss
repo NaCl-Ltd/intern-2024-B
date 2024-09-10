@@ -311,12 +311,30 @@ aside {
   }
 }
 
+
 span.image {
   margin-top: 10px;
-  input {
-    border: 0;
-  }
 }
+
+.custom-file-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #61c6b5; /* ボタンの背景色 */
+  color: white; /* 文字色 */
+  border-radius: 5px; /* 角丸 */
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-button:hover {
+  background-color: #3aa492; /* ホバー時の色 */
+}
+
+.custom-file-button:active {
+  background-color: #7bffe9; /* アクティブ時の色 */
+}
+
 
 aside.col-md-4{
   background-color: #EEEEEE;

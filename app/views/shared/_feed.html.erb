@@ -1,9 +1,9 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-    <% if @pinned.present? %>
+    <% if @pinned %>
       <%= render @pinned %>
     <% end %>
-    <% if @not_pinned.present? %>
+    <% if @not_pinned %>
       <%= render @not_pinned %>
     <% else %>
       <%= render @feed_items %>
