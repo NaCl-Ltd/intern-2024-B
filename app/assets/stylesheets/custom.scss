@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -320,4 +320,13 @@ span.image {
 
 aside.col-md-4{
   background-color: #EEEEEE;
+}
+
+
+/* username */
+.username{
+  font-size: small;
+  color: #888888;
+  margin-bottom: 0%;
+  margin-left: 1%;
 }
