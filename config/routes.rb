@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root   "static_pages#home"
   get    "/lately",  to: "static_pages#lately"
   get    "/help",    to: "static_pages#help"
+  get    "/delete",  to: "static_pages#delete"
   get    "/about",   to: "static_pages#about"
   get    "/contact", to: "static_pages#contact"
   get    "/signup",  to: "users#new"
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
   member do
     post :pin
     post :pin_out
+    post :recover
   end
 end
   resources :relationships,       only: [:create, :destroy]
