@@ -12,8 +12,12 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
+  before_validation :ensure_username_has_at_sign
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :username, presence: true, uniqueness: true,
+                       format: { with: /\A@?[a-zA-Z0-9_]+\z/ }
+
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
@@ -110,6 +114,13 @@ class User < ApplicationRecord
   end
 
   private
+
+    def ensure_username_has_at_sign
+      # usernameに@がない場合に追加
+      if username.present? && !username.start_with?('@')
+        self.username = "@#{username}"
+      end
+    end
 
     # メールアドレスをすべて小文字にする
     def downcase_email
