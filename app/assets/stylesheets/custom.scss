@@ -492,13 +492,20 @@ label{
 
 /* button */
 .btn-primary {
-  background-color: #29b9ad;
-  border-color: #29b9ad;
+  background-color: #29b9ad !important;
+  border-color: #29b9ad !important;
 }
 .btn-primary:hover {
   background-color: var(--pagination-hover-back);
   border-color: var(--pagination-hover-back);
 }
+.btn-primary:active {
+  color: #29b9ad !important;
+  background-color: #fafafa !important;
+  border-color: #fafafa !important;
+}
+
+
 .u_search {
   margin: auto;
   width: 50%;
