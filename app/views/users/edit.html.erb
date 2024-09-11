@@ -24,6 +24,9 @@
       <%= f.label :bio, t('users.bio') %>
       <%= f.text_field :bio, class: 'form-control' %>
 
+      <%= f.label :prefecture, t('users.place of birth') %>
+        <%= f.select :prefecture, options_for_select(Place.birthplaces.keys.map { |key| [key, key] }), {} %>
+
       <%= f.submit t('links.update'), class: "btn btn-primary" %>
     <% end %>
 

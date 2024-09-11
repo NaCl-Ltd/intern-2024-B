@@ -5,9 +5,11 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
+    target_prefecture = params[:prefecture]
     target_word = params[:word]
-    if params[:word]
-      @users = User.looks(target_word).paginate(page: params[:page])
+
+    if target_prefecture.present? && target_prefecture != "---"  || target_word.present?
+      @users = User.looks(target_word, target_prefecture).paginate(page: params[:page])
     else
       @users = User.paginate(page: params[:page])
     end
@@ -71,7 +73,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :username, :email, :password,
-                                   :password_confirmation, :bio)
+                                   :password_confirmation, :bio , :prefecture)
     end
 
     # beforeフィルタ
