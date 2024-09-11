@@ -12,6 +12,7 @@ class Micropost < ApplicationRecord
                                       message: "must be a valid image format" },
                       size:         { less_than: 5.megabytes,
                                       message:   "should be less than 5MB" }
+  scope :exist_records, -> { where(deleted_at: nil)}
 
   #ポストをいいねする
   def iine(user)

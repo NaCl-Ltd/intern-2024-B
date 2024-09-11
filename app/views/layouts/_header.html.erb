@@ -25,6 +25,7 @@
           class="nav navbar-nav navbar-right">
         <li><%= link_to t('links.home'), root_path %></li>
         <li><%= link_to t('links.new'), lately_path %></li>
+        <li><%= link_to t('links.delete'), delete_path %></li>
         <li><%= link_to t('links.help'), help_path %></li>
         <% if logged_in? %>
           <li><%= link_to t('links.user'), users_path %></li>
@@ -55,7 +56,7 @@
             <li><%= link_to "日本語", url_for(locale: :ja) %></li>
           </ul>
         </li>
-        
+
       </ul>
     </nav>
   </div>

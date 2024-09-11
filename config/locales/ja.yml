@@ -6,6 +6,7 @@ ja:
     help: "ヘルプ"
     home: "ホーム"
     delete: "削除"
+    recover: "削除取消"
     account: "アカウント"
     profile: "プロフィール"
     prof_text: "ここに文章を入力してください" 

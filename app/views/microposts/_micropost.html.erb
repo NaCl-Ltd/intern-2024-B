@@ -1,6 +1,11 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="user">
+    <%= link_to micropost.user.name, micropost.user %>
+    <p class="username" style="display:inline">
+      <%= "#{micropost.user.username}" %>
+    </p>
+  </span>
   <span class="content">
     <%= raw Rinku.auto_link((micropost.content), :urls, 'target="_blank"') %>
     <% if micropost.image.attached? %>
@@ -8,10 +13,14 @@
     <% end %>
   </span>
   <span class="timestamp">
-     <%= time_ago_in_words(micropost.created_at) %> 
+     <%= time_ago_in_words(micropost.created_at) %>
     <% if current_user?(micropost.user) %>
-      <%= link_to t('links.delete'), micropost, data: { "turbo-method": :delete,
+      <% if micropost.deleted_at %>
+        <%= link_to t('links.recover'),recover_micropost_path(micropost), data:{"turbo-method": :post} %>
+      <% else %>
+        <%= link_to t('links.delete'), micropost, data: { "turbo-method": :delete,
                                                turbo_confirm: "You sure?" } %>
+      <% end %>
     <% end %>
   <% if current_user?(micropost.user) %>
     <% if micropost.pinned? %>

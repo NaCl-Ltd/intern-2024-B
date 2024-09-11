@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.exist_records.paginate(page: params[:page])
     @pinned = @microposts.where(pinned: true)
     @not_pinned = @microposts.where(pinned: false)
   end
@@ -70,7 +70,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :username, :email, :password,
                                    :password_confirmation, :bio)
     end
 
