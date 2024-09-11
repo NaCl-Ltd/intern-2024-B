@@ -6,15 +6,18 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <p class="username">
+      <%= @user.username %>
+      </p>
+      <strong>
+        <%= t('users.bio') %>:
+      </strong>
+      <%= @user.bio %>
     </section>
+
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
-    <p>
-      <strong>
-        <%= t('users.bio') %>:
-      </strong> <%= @user.bio %>
-    </p>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
