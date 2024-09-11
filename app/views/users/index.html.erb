@@ -4,8 +4,10 @@
 </h1>
 
 <%= form_with url:users_path,local: true,method: :get do |f| %>
+  <%= f.label :prefecture, t('users.place of birth') %>
   <%= f.select :prefecture, options_for_select(Place.birthplaces.keys.map { |key| [key, key] }), {} %>
-  <%= f.text_field :word,placeholder: "name or e-mail"%>
+  <%= f.label :name, t('users.username or e-mail') %>
+  <%= f.text_field :word,placeholder: "name or e-mail" %>
  <%= f.submit "検索", class: "btn btn-primary" %>
 <% end %>
 
