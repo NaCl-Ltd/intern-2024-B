@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page]).where(deleted_at: nil)
+    @microposts = @user.microposts.exist_records.paginate(page: params[:page])
     @pinned = @microposts.where(pinned: true)
     @not_pinned = @microposts.where(pinned: false)
   end

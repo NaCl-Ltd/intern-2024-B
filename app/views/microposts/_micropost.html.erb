@@ -11,7 +11,7 @@
      <%= time_ago_in_words(micropost.created_at) %>
     <% if current_user?(micropost.user) %>
       <% if micropost.deleted_at %>
-        <%= link_to '削除取消',recover_micropost_path(micropost), data:{"turbo-method": :post} %>
+        <%= link_to t('links.recover'),recover_micropost_path(micropost), data:{"turbo-method": :post} %>
       <% else %>
         <%= link_to t('links.delete'), micropost, data: { "turbo-method": :delete,
                                                turbo_confirm: "You sure?" } %>
