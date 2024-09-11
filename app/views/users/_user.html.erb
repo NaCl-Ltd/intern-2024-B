@@ -2,19 +2,22 @@
   <%= gravatar_for user, size: 50 %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, data: { "turbo-method": :delete,
+  <c> | </c>
+  <%= link_to "delete", user, data: { "turbo-method": :delete,
                                           turbo_confirm: "You sure?" } %>
   <% end %>
   <br>
   <c id="following" class="stat">
     <%= user.following.count %>
   </c>
-  <%= t("users.following") %>
-  &nbsp;|&nbsp;&nbsp;
+  <c>
+    <%= t("users.following") %>
+    &nbsp;|&nbsp;&nbsp;
+  </c>
   <c id="followers" class="stat">
     <%= user.followers.count %>
   </c>
-  <%= t("users.followers") %>
+  <c><%= t("users.followers") %></c>
 
   <% if user.bio.present? %>
     <p><%= user.bio %></p>
