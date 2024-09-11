@@ -37,6 +37,7 @@ en:
     help: "Help"
     home: "Home"
     delete: "delete"
+    recover: "recover"
     account: "Account"
     profile: "Profile"
     prof_text: "Compose new micropost..."
