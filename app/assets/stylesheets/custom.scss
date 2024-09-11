@@ -11,10 +11,23 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+/* color */
+body {
+  --main-background: #fff;
+  --default-font: #000;
+}
+
+body.dark-mode {
+    --main-background: #222;
+    --default-font: #fff;
+}
+
+
 /* universal */
 
 body {
   padding-top: 60px;
+  background-color: var(--main-background);
 }
 
 section {
@@ -38,11 +51,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+h1, h3, h4, h5, h6 {
+  color: var(--default-font);
+}
+
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+
 }
 
 h2 {
@@ -57,6 +75,7 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: var(--default-font);
 }
 
 
@@ -82,6 +101,51 @@ p {
     text-decoration: none;
   }
 }
+
+
+ /* === ボタンを表示するエリア ============================== */
+ .dark_modeArea {
+  float          : right;                /* 右寄せ           */
+  width          : 30px;                /* ボタンの横幅       */
+  margin-top     : 11px;
+  
+}
+ 
+ /* === チェックボックス ==================================== */
+.dark_modeArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.dark_modeArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;              /* 文字位置は中央     */
+  border         : 1px solid #fff;      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  height         : 30px;                /* ボタンの高さ       */
+  font-size      : 9px;                /* 文字サイズ         */
+  line-height    : 30px;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #fff;                /* 背景色             */
+  box-shadow     : none;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.dark_modeArea label span:after{
+  content        : "☀";               /* 表示する文字       */
+  color          : #111;
+}
+.dark_modeArea #dark_modecheck:checked + label {
+  background     : #111;             /* 背景色             */
+  box-shadow     : none;                /* 影を消す           */
+}
+.dark_modeArea #dark_modecheck:checked + label span:after {
+  content        : "☽";                /* 表示する文字       */
+  color          : #fff;                /* 文字色             */
+}
+
 
 /* footer */
 
@@ -287,6 +351,7 @@ input {
   .content {
     display: block;
     margin-left: 60px;
+    color: var(--default-font);
     img {
       display: block;
       padding: 5px 0;

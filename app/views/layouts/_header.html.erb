@@ -2,16 +2,25 @@
   <div class="container">
       <%= image_tag("logo300.png", id: "logo_icon", alt: "Ruby logo", width: "30px") %>
       <%= link_to "Turquoise", root_path, id: "logo" %>
-    </ul>
-    <nav>
-      <div class="navbar-header">
-        <button id="hamburger" type="button" class="navbar-toggle collapsed">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+
+      <nav>
+        <div class="navbar-header">
+          <div class="dark_modeArea" id="makeImg">
+            <input type="checkbox" id="dark_modecheck">
+            <label for="dark_modecheck">
+              <span></span>
+            </label>
+          </div>
+
+
+          <button id="hamburger" type="button" class="navbar-toggle collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
       </div>
+      
       <ul id="navbar-menu"
           class="nav navbar-nav navbar-right">
         <li><%= link_to t('links.home'), root_path %></li>
@@ -50,4 +59,5 @@
       </ul>
     </nav>
   </div>
+  
 </header>
