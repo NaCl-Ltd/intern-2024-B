@@ -10,8 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema[7.0].define(version: 2024_09_11_023403) do
+  create_table "Places", force: :cascade do |t|
+    t.integer "birthplace", default: 0, null: false
+  end
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_10_012046) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -75,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_10_012046) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "username"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,7 +90,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_10_012046) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.text "bio"
+    t.string "username"
+    t.string "prefecture"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

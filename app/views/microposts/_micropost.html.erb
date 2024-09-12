@@ -9,7 +9,9 @@
   <span class="content">
     <%= raw Rinku.auto_link((micropost.content), :urls, 'target="_blank"') %>
     <% if micropost.image.attached? %>
-      <%= image_tag micropost.image.variant(:display) %>
+      <% micropost.image.each do |image| %>
+        <%= image_tag image.variant(:display)%>
+      <% end %>
     <% end %>
   </span>
   <span class="timestamp">
