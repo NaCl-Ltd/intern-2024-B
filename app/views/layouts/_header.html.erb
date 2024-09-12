@@ -5,11 +5,13 @@
 
       <nav>
         <div class="navbar-header">
-          <div class="dark_modeArea" id="makeImg">
-            <input type="checkbox" id="dark_modecheck">
-            <label for="dark_modecheck">
-              <span></span>
-            </label>
+          <div data-controller="darkmode">
+            <div class="dark_modeArea" id="makeImg">
+              <input type="checkbox" id="dark_modecheck" data-action="darkmode#toggle">
+              <label for="dark_modecheck">
+                <span></span>
+              </label>
+            </div>
           </div>
 
 
@@ -20,7 +22,7 @@
             <span class="icon-bar"></span>
           </button>
       </div>
-      
+
       <ul id="navbar-menu"
           class="nav navbar-nav navbar-right">
         <li><%= link_to t('links.home'), root_path %></li>
@@ -60,5 +62,5 @@
       </ul>
     </nav>
   </div>
-  
+
 </header>
