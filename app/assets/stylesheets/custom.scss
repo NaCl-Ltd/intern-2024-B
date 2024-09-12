@@ -9,12 +9,48 @@ $gray-medium-light: #eaeaea;
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+
 }
+
+/* color */
+body {
+  --main-background: #fff;
+  --default-font: #111;
+  --default-hover: blue;
+  --stats-color: gray;
+  --jumbotron: #eeeeee;
+  --footer-font: #9f9f9f;
+  --footer-hover: #6c6c6c;
+
+  --pagination-back: #fff;
+  --pagination-font: #fff;
+  --pagination-border: #ddd;
+  --pagination-hover-text: #1a6f68;
+  --pagination-hover-back: #25a399;
+}
+
+body.dark-mode {
+    --main-background: #222;
+    --default-font: #fafafa;
+    --default-hover: blue;
+    --stats-color: #ccc;
+    --jumbotron: #333;
+    --footer-font: #565656;
+    --footer-hover: #6c6c6c;
+
+    --pagination-back: #333;
+    --pagination-font: #eee;
+    --pagination-border: #444;
+    --pagination-hover-text: #30dacc;
+    --pagination-hover-back: #30dacc;
+}
+
 
 /* universal */
 
 body {
   padding-top: 60px;
+  background-color: var(--main-background);
 }
 
 section {
@@ -27,8 +63,10 @@ textarea {
 
 .center {
   text-align: center;
+  background-color: var(--jumbotron);
   h1 {
     margin-bottom: 10px;
+    color: var(--default-font);
   }
 }
 
@@ -38,11 +76,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+h1, h3, h4, h5, h6 {
+  color: var(--default-font);
+}
+
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+
 }
 
 h2 {
@@ -57,6 +100,16 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: var(--default-font);
+}
+
+a {
+  color: #29b9ad;
+}
+
+c {
+  color: var(--stats-color);
+  font-size: 12px;
 }
 
 
@@ -83,6 +136,51 @@ p {
   }
 }
 
+
+ /* === ボタンを表示するエリア ============================== */
+ .dark_modeArea {
+  float          : right;                /* 右寄せ           */
+  width          : 30px;                /* ボタンの横幅       */
+  margin-top     : 11px;
+  
+}
+ 
+ /* === チェックボックス ==================================== */
+.dark_modeArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.dark_modeArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;              /* 文字位置は中央     */
+  border         : 1px solid #fff;      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  height         : 30px;                /* ボタンの高さ       */
+  font-size      : 9px;                /* 文字サイズ         */
+  line-height    : 30px;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #fff;                /* 背景色             */
+  box-shadow     : none;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.dark_modeArea label span:after{
+  content        : "☀";               /* 表示する文字       */
+  color          : #111;
+}
+.dark_modeArea #dark_modecheck:checked + label {
+  background     : #111;             /* 背景色             */
+  box-shadow     : none;                /* 影を消す           */
+}
+.dark_modeArea #dark_modecheck:checked + label span:after {
+  content        : "☽";                /* 表示する文字       */
+  color          : #fff;                /* 文字色             */
+}
+
+
 /* footer */
 
 footer {
@@ -91,9 +189,9 @@ footer {
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   a {
-    color: $gray;
+    color: var(--footer-font);
     &:hover {
-      color: $gray-darker;
+      color: var(--footer-hover);
     }
   }
   small {
@@ -181,7 +279,7 @@ aside {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
-    color: gray;
+    color: var(--stats-color);
     &:first-child {
       padding-left: 0;
       border: 0;
@@ -190,6 +288,9 @@ aside {
       text-decoration: none;
       color: blue;
     }
+  }
+  c{
+    color: var(--stats-color);
   }
   strong {
     display: block;
@@ -257,7 +358,11 @@ input {
 
 .dropdown-menu.active {
   display: block;
-}
+  background-color: var(--main-background);
+
+  a{
+    color: var(--default-font);
+  }}
 
 /* Users index */
 
@@ -287,6 +392,7 @@ input {
   .content {
     display: block;
     margin-left: 60px;
+    color: var(--default-font);
     img {
       display: block;
       padding: 5px 0;
@@ -337,14 +443,77 @@ span.image {
 
 
 aside.col-md-4{
+  h1 {
+    color: #111;
+  }
+  a {
+    color: gray;
+  }
   background-color: #EEEEEE;
 }
 
+aside.col-md-6{
+  color: var(--default-font);
+  c{
+    color:var(--default-font);
+  }
+}
 
-/* username */
-.username{
-  font-size: small;
-  color: #888888;
-  margin-bottom: 0%;
-  margin-left: 1%;
+label{
+  color: var(--default-font);
+}
+
+
+/* pagination */
+.pagination > li > a {
+  color: #29b9ad;
+  background-color: var(--main-background);
+  border: 1px solid var(--pagination-border);
+} 
+.pagination > li > a:hover {
+  color: var(--pagination-hover-text);
+} 
+
+.pagination > .active > a {
+  color: var(--pagination-font);
+  background-color: #29b9ad;
+  border-color: var(--pagination-border);
+} 
+.pagination > .active > a:hover {
+  background-color: var(--pagination-hover-back);
+  border-color: var(--pagination-border);
+} 
+
+.pagination > .disabled > a {
+  background-color: var(--main-background);
+  border-color: var(--pagination-border);
+}
+
+
+/* button */
+.btn-primary {
+  background-color: #29b9ad !important;
+  border-color: #29b9ad !important;
+}
+.btn-primary:hover {
+  background-color: var(--pagination-hover-back);
+  border-color: var(--pagination-hover-back);
+}
+.btn-primary:active {
+  color: #29b9ad !important;
+  background-color: #fafafa !important;
+  border-color: #fafafa !important;
+}
+
+
+.u_search {
+  margin: auto;
+  width: 50%;
+  max-width: 400px; /* 必要に応じて最大幅を設定 */
+}
+
+@media (max-width: 800px) {
+  .u_search {
+    width: 100%; /* 画面幅が800px未満のときに全幅に変更 */
+  }
 }
