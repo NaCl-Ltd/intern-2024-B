@@ -333,6 +333,8 @@ input {
   }
 }
 
+
+
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -348,6 +350,11 @@ input {
     font-weight: normal;
   }
 }
+
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #29b9ad;
+}
+
 
 #session_remember_me {
   width: auto;
@@ -516,4 +523,25 @@ label{
   .u_search {
     width: 100%; /* 画面幅が800px未満のときに全幅に変更 */
   }
+}
+
+
+.form-control {
+  color: var(--default-font);
+  background-color: var(--main-background);
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group-addon {
+  color: var(--default-font);
+  background-color: var(--pagination-back);
+}
+
+.username {
+  color: #8d8d8d;
+  font-size: 13px;
 }
