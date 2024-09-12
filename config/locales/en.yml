@@ -54,6 +54,7 @@ en:
 
   users:
     user_name: "User name"
+    user_id: "UserID"
     email: "Email"
     password: "Password"
     confirmation: "Confirmation"

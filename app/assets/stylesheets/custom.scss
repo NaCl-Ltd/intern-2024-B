@@ -333,6 +333,8 @@ input {
   }
 }
 
+
+
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -516,4 +518,20 @@ label{
   .u_search {
     width: 100%; /* 画面幅が800px未満のときに全幅に変更 */
   }
+}
+
+
+.form-control {
+  color: var(--default-font);
+  background-color: var(--main-background);
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group-addon {
+  color: var(--default-font);
+  background-color: var(--pagination-back);
 }

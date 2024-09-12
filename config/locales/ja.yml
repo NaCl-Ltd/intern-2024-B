@@ -23,6 +23,7 @@ ja:
 
   users:
     user_name: "ユーザー名"
+    user_id: "ユーザーID"
     email: "メールアドレス"
     password: "パスワード"
     confirmation: "パスワードの再入力"
