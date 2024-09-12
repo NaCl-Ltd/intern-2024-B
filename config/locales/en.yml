@@ -50,6 +50,7 @@ en:
     post: "Post"
     pinned: "pin"
     pin_out: "pin out"
+    search: "search"
 
   users:
     user_name: "User name"
