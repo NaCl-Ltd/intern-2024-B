@@ -351,6 +351,11 @@ input {
   }
 }
 
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #29b9ad;
+}
+
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
@@ -534,4 +539,9 @@ label{
 .input-group-addon {
   color: var(--default-font);
   background-color: var(--pagination-back);
+}
+
+.username {
+  color: #8d8d8d;
+  font-size: 13px;
 }
