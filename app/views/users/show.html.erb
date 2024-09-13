@@ -9,6 +9,12 @@
       <p class="username">
       <%= @user.username %>
       </p>
+
+      <p class="place">
+      <strong><%= t('users.place of birth') %>:</strong>
+      <%= @user.prefecture %>
+      </p>
+
       <strong>
         <%= t('users.bio') %>:
       </strong>
