@@ -17,7 +17,10 @@
   <c id="followers" class="stat">
     <%= user.followers.count %>
   </c>
-  <c><%= t("users.followers") %></c>
+  <%= t("users.followers") %>
+  <% if user.prefecture.present? && user.prefecture != "---" %>
+    &nbsp;| &nbsp;<%= t('users.place of birth') %>：<%= user.prefecture %>
+  <% end %>
 
   <% if user.bio.present? %>
     <p><%= user.bio %></p>

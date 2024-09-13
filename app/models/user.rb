@@ -133,7 +133,14 @@ class User < ApplicationRecord
       self.activation_digest = User.digest(activation_token)
     end
 
-    def self.looks(word)
-      where("name LIKE ? OR email LIKE ?", "%#{word}%", "%#{word}%")
+    def self.looks(word, prefecture)
+      if word.present? && prefecture != "---"
+        where("name LIKE ? OR email LIKE ?", "%#{word}%", "%#{word}%")
+          .where("prefecture LIKE ?", "#{prefecture}")
+      elsif word.present?
+        where("name LIKE ? OR email LIKE ?", "%#{word}%", "%#{word}%")
+      elsif prefecture != "---"
+        where("prefecture LIKE ?", "#{prefecture}")
+      end
     end
 end
