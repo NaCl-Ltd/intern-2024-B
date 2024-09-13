@@ -46,7 +46,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content,:pinned, :deleted_at,imaged:[])
+      params.require(:micropost).permit(:content,:image,:pinned, :deleted_at)
     end
 
     def correct_user

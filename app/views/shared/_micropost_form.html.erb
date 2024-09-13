@@ -5,7 +5,7 @@
   </div>
   <%= f.submit t('links.post'), class: "btn btn-primary" %>
   <span class="image">
-    <%= f.file_field :image, multiple: true , accept: "image/jpeg,image/gif,image/png", id: "fileInput", style: "display:none;" %>
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", id: "fileInput", style: "display:none;" %>
     <label for="fileInput" class="custom-file-button">ファイルを選択</label>
   </span>
   <div id="image-preview"></div>
