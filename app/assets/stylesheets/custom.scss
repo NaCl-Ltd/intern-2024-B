@@ -456,6 +456,9 @@ aside.col-md-4{
   a {
     color: gray;
   }
+  .place {
+    color: #111;
+  }
   background-color: #EEEEEE;
 }
 
@@ -544,10 +547,4 @@ label{
 .username {
   color: #8d8d8d;
   font-size: 13px;
-}
-
-
-select {
-  color: var(--default-font);
-  background-color: var(--main-background);
 }
