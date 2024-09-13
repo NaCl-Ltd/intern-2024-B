@@ -532,6 +532,7 @@ label{
 }
 
 
+
 .form-control {
   color: var(--default-font);
   background-color: var(--main-background);
@@ -555,4 +556,20 @@ label{
 select {
   color: var(--default-font);
   background-color: var(--main-background);
+}
+
+
+#image-preview img {
+  max-width: 150px;
+  max-height: 150px; 
+  object-fit: contain; 
+  margin: 5px; 
+  border: 1px solid #ddd; 
+}
+
+
+#image-preview img {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
