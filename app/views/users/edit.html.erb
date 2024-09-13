@@ -9,8 +9,11 @@
       <%= f.label :name, t('users.user_name') %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :username, "username" %>
-      <%= f.text_field :username, class: 'form-control' %>
+      <%= f.label :username, t('users.user_id') %>
+      <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <%= f.text_field :username, class: 'form-control', placeholder: 'Username', aria_label: 'Username', aria_describedby: 'addon-wrapping' %>
+      </div>
 
       <%= f.label :email, t('users.email') %>
       <%= f.email_field :email, class: 'form-control' %>

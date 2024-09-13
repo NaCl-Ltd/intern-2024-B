@@ -38,6 +38,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    # usernameから最初の@を取り除いて表示
+    @user.username = @user.username.delete_prefix("@")
   end
 
   def update

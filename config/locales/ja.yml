@@ -19,9 +19,11 @@ ja:
     post: "投稿"
     pinned: "固定する"
     pin_out: "固定解除"
+    search: "検索"
 
   users:
     user_name: "ユーザー名"
+    user_id: "ユーザーID"
     email: "メールアドレス"
     password: "パスワード"
     confirmation: "パスワードの再入力"
