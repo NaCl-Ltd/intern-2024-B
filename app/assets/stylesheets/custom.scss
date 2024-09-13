@@ -323,6 +323,8 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+  color: var(--default-font);
+  background-color: var(--main-background);
 }
 
 #error_explanation {
